@@ -12,7 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "graphql-yoga": "1.17.4",
-    "prisma-client-lib": "1.28.3"
+    "prisma-client-lib": "1.28.3",
+    "prisma-binding": "2.3.8"
   }, 
   "devDependencies": {
     "nodemon": "1.18.10"
