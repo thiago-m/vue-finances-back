@@ -11,15 +11,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "2.4.3",
     "graphql-yoga": "1.17.4",
-    "prisma-client-lib": "1.28.3",
-    "prisma-binding": "2.3.8"
-  }, 
+    "jsonwebtoken": "8.5.0",
+    "prisma-binding": "2.3.8",
+    "prisma-client-lib": "1.28.3"
+  },
   "devDependencies": {
     "nodemon": "1.18.10"
   },
-  "resoluções" : { 
-    "graphql" : "^0.13.0" , 
-    "** /graphql" :"^0.13.0" 
-  } 
+  "resoluções": {
+    "graphql": "^0.13.0",
+    "** /graphql": "^0.13.0"
+  }
 }
