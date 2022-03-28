@@ -5,6 +5,20 @@ function user (_, args, ctx, info) {
   return ctx.db.query.user({where: {id: userId}}, info)
 }
 
+function accounts (_, args, ctx, info) {
+  const userId = getUserId(ctx)
+  return ctx.db.query.accounts({
+    where: {
+      OR: [
+        { user: { id: userId } },
+        { user: null }
+      ]
+    },
+    orderBy: 'description_ASC'
+  }, info)
+}
+
 module.exports = {
-  user
+  user,
+  accounts
 }
