@@ -18,7 +18,8 @@
     "prisma-client-lib": "1.28.3"
   },
   "devDependencies": {
-    "nodemon": "1.18.10"
+    "nodemon": "1.18.10",
+    "moment": "2.24.0"
   },
   "resoluções": {
     "graphql": "^0.13.0",
