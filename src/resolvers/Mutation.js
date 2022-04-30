@@ -28,6 +28,23 @@ function createCategory (_, {description, operation}, ctx, info) {
   }, info)
 }
 
+function createRecord(_, args, ctx, info) {
+  const userId = getUserId(ctx)
+  return ctx.db.mutation.createRecord({
+    data: {
+      user: { connect: {id: userId} },
+      account: { connect: {id: args.accountId} },
+      category: { connect: {id: args.categoryId} },
+      amount: args.amount,
+      type: args.type,
+      date: args.date,
+      description: args.description,
+      tags: args.tags,
+      note: args.note
+    }
+  }, info)
+}
+
 async function login (_, {email, password}, ctx, info) {
   const user = await ctx.db.query.user({ where: {email} })
   if(!user) throw new Error('invalid credentials!')
@@ -49,4 +66,10 @@ async function signup (_, args, ctx, info) {
   return { token, user }
 }
 
-module.exports = { createAccount, createCategory, login, signup }
+module.exports = { 
+  createAccount, 
+  createCategory,
+  createRecord, 
+  login, 
+  signup 
+}
