@@ -6,6 +6,7 @@ type Query {
   user: User
   records(
     type: Operation,
+    month: String, 
     accountIds: [ ID! ],
     categoriesIds: [ ID! ]
   ): [ Record! ]!
