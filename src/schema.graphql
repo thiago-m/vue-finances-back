@@ -4,6 +4,11 @@ type Query {
   accounts: [Account!]!
   categories(operation: Operation): [ Category! ]!
   user: User
+  records(
+    type: Operation,
+    accountIds: [ ID! ],
+    categoriesIds: [ ID! ]
+  ): [ Record! ]!
 }
 
 type Mutation {
